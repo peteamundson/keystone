@@ -19,5 +19,9 @@
 				button(type='button', data-alt-text='Delete File', style=(hasFile ? '' : 'display: none;')).btn.btn-link.btn-cancel.btn-delete-file Remove File
 				button(type='button', data-alt-text='Cancel Upload', style='display: none;').btn.btn-link.btn-cancel.btn-cancel-file Cancel Upload
 				button(type='button', style='display: none;').btn.btn-link.btn-cancel.btn-undo-file Undo Remove
+				if hasFile
+					a(href=item.get(field.paths.url), rel=field.path).img-thumbnail
+						.preview(style='text-align:center;') Current Image
+						img(width=120, height=120, src=item.get(field.paths.url))
 		if field.note
 			.col-md-10: .field-note!= field.note
