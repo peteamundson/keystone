@@ -22,6 +22,6 @@
 				if hasFile
 					a(href=item.get(field.paths.url), rel=field.path).img-thumbnail
 						.preview(style='text-align:center;') Current Image
-						img(width=120, height=120, src=item.get(field.paths.url))
+						img(height=120, src=item.get(field.paths.url))
 		if field.note
 			.col-md-10: .field-note!= field.note
