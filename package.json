@@ -1,11 +1,11 @@
 {
-  "name": "keystone",
+  "name": "keystone-azure-files",
   "version": "0.2.32",
-  "description": "Web Application Framework and Admin GUI / Content Management System built on Express.js and Mongoose",
+  "description": "Web Application Framework and Admin GUI / Content Management System built on Express.js and Mongoose.  Updated with more AzureFiles support.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JedWatson/keystone.git"
+    "url": "https://github.com/peteamundson/keystone.git"
   },
   "dependencies": {
     "async": "~0.9.0",
@@ -55,7 +55,7 @@
     "vinyl-source-stream": "~1.0.0",
     "watchify": "~2.1.0"
   },
-  "author": "Jed Watson",
+  "author": "Jed Watson - Updated by Pete Amundson",
   "license": "MIT",
   "keywords": [
     "express",
@@ -68,16 +68,19 @@
     "gui",
     "forms"
   ],
-  "readmeFilename": "README.md",
-  "gitHead": "ef3fd612285315ea8e12f68da4c8d6031e2c7fe7",
   "bugs": {
-    "url": "https://github.com/JedWatson/keystone/issues"
+    "url": "https://github.com/peteamundson/keystone/issues"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha ./test -R spec"
+    "test": "mocha ./test -R spec"
   },
   "engines": {
     "node": ">= 0.10.28",
     "npm": ">= 1.4.9"
+  },
+  "homepage": "https://github.com/peteamundson/keystone",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
   }
 }
