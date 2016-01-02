@@ -1,13 +1,18 @@
-var demand = require('must'),
-	request = require('supertest'),
-	keystone = require('../../index.js');
+var demand = require('must');
+var request = require('supertest');
+var methodOverride = require('method-override');
+var bodyParser = require('body-parser');
+var keystone = require('../../index.js');
 
 var getApp = function() {
 	var app = keystone.express();
-	app.use(keystone.express.bodyParser());
-	app.use(keystone.express.methodOverride());
+	app.use(bodyParser.json());
+	app.use(bodyParser.urlencoded({
+		extended: true
+	}));
+	app.use(methodOverride());
 	return app;
-}
+};
 
 describe('Keystone.View', function() {
 	
@@ -46,7 +51,7 @@ describe('Keystone.View', function() {
 			app.get('/', function(req, res) {
 				var view = new keystone.View(req, res);
 				view.render(function(err, req2, res2) {
-					demand(err).be.undefined();
+					demand(err).not.exist();
 					req2.must.equal(req);
 					res2.must.equal(res);
 					res.send('OK');
